@@ -7,3 +7,4 @@
    args: ['push', 'gcr.io/blender-265102/blender-cuda:$COMMIT_SHA']
  images:
  - 'gcr.io/blender-265102/blender-cuda:$COMMIT_SHA'
+timeout: 1200s
