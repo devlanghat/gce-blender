@@ -1,9 +1,9 @@
  steps:
  # build the container image
- - name: 'devlanghat/blender-cuda'
+ - name: 'gcr.io/cloud-builders/docker'
    args: ['build', '-t', 'gcr.io/blender-265102/blender-cuda:$COMMIT_SHA', '.']
  # push the container image to Container Registry
- - name: 'devlanghat/blender-cuda'
+ - name: 'gcr.io/cloud-builders/docker'
    args: ['push', 'gcr.io/blender-265102/blender-cuda:$COMMIT_SHA']
  images:
  - 'gcr.io/blender-265102/blender-cuda:$COMMIT_SHA'
