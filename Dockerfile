@@ -8,7 +8,7 @@ RUN mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600
 RUN apt-key adv --no-tty --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
 RUN add-apt-repository "deb http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/ /"
 RUN apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install cuda
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y --no-install-recommends install cuda
 COPY scripts/* ./
 RUN chmod +x /render.sh
 CMD /render.sh
