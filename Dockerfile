@@ -1,7 +1,7 @@
 FROM ubuntu:18.04
 RUN apt-get update && apt-get -y --no-install-recommends install libglu1 libxi6 libxrender1 gcc wget gnupg software-properties-common
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-RUN apt-get install -no-tty -y apt-transport-https ca-certificates
+RUN apt-get install --no-tty -y apt-transport-https ca-certificates
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 RUN apt-get update && apt-get -y install google-cloud-sdk
 RUN wget -nv https://mirror.clarkson.edu/blender/release/Blender2.81/blender-2.81a-linux-glibc217-x86_64.tar.bz2
